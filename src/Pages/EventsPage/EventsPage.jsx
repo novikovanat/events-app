@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {fetchEvents} from "../../js/fetch";
+import { fetchEvents } from "../../js/fetch";
 import EventsList from "../../Components/EventsList/EventsList";
 export default function EventsPage() {
   const [data, setData] = useState({
@@ -22,8 +22,8 @@ export default function EventsPage() {
         setError("");
         const events = await fetchEvents(page);
         const { data } = events;
-        if (data.length == 0) {
-          setError("");
+        if (data.length === 0) {
+          setError("No more events anymore");
           return;
         }
         setData(data);
@@ -36,5 +36,11 @@ export default function EventsPage() {
     getEvents(page);
   }, [page]);
 
-  return <EventsList events={data.events} />;
+  return (
+    <>
+      {data.totalItems && !error && <EventsList events={data.events} />}
+      {error && !loading && <p>{error}</p>}
+      {loading && <p>Loading participants ...</p>}
+    </>
+  );
 }

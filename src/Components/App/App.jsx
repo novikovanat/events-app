@@ -3,12 +3,13 @@ import { Suspense, lazy } from "react";
 import "./App.css";
 import NavigationComponent from "../NavigationComponent/NavigationComponent";
 const EventsPage = lazy(() => import("../../Pages/EventsPage/EventsPage"));
-const ParticipantsComponent = lazy(() =>
-  import("../../Components/ParticipantsComponent/ParticipantsComponent")
-);
 const EventRegistrationComponent = lazy(() =>
   import("../EventRegistrationComponent/EventRegistrationComponent")
 );
+const ParticipantsPage = lazy(() =>
+  import("../../Pages/ParticipantsPage/ParticipantsPage")
+);
+
 import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
             <Route path="/" element={<EventsPage />} />
             <Route
               path="/:eventId/participants"
-              element={<ParticipantsComponent />}
+              element={<ParticipantsPage />}
             />
             <Route
               path="/:eventId/reistration"

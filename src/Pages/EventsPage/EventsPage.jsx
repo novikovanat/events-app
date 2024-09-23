@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import fetchEvents from "../../js/fetch";
+import {fetchEvents} from "../../js/fetch";
 import EventsList from "../../Components/EventsList/EventsList";
 export default function EventsPage() {
   const [data, setData] = useState({

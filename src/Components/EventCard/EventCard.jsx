@@ -1,13 +1,13 @@
 import EventLink from "../EventLink/EventLink";
 
-export default function EventCard({ title, description }) {
+export default function EventCard({ title, description, id }) {
   return (
     <>
       <h2>{title}</h2>
       <p>{description}</p>
       <nav>
-        <EventLink path="/:eventId/participants" title="Register" />
-        <EventLink path="/:eventId/reistration" title="View" />
+        <EventLink path={`/${id}/participants`} title="View" />
+        <EventLink path={`/${id}/reistration`} title="Register" />
       </nav>
     </>
   );

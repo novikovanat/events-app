@@ -1,30 +1,38 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { postParticipant } from "../../js/fetch";
+import { useParams } from "react-router-dom";
 
 export default function EventRegistrationComponent() {
+  const { eventId } = useParams();
+
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
       .min(3, "Too Short!")
       .max(18, "Too Long!")
       .required("Name is required!"),
-    Email: Yup.string().email().required("Email is required!"),
+    email: Yup.string().email().required("Email is required!"),
     dateOfBirth: Yup.date("Invalid date format!").required(
       "Date of birth is required!"
     ),
     source: Yup.string().required("Choose option"),
   });
-  const handleSubmit = (participant, actions) => {
-    console.log("====================================");
-    console.log(participant);
-    console.log("====================================");
-    actions.resetForm();
+  const handleSubmit = async (participant, actions) => {
+    try {
+      console.log(participant);
+      const newParticipant = await postParticipant(eventId, participant);
+      return newParticipant;
+    } catch (error) {
+      console.log(error);
+      actions.resetForm();
+    }
   };
 
   return (
     <Formik
       initialValues={{
         fullName: "",
-        Email: "",
+        email: "",
         dateOfBirth: "",
         source: "",
       }}
@@ -40,8 +48,8 @@ export default function EventRegistrationComponent() {
 
         <label>
           Email
-          <Field name="Email" />
-          <ErrorMessage name="Email" component="span" />
+          <Field name="email" />
+          <ErrorMessage name="email" component="span" />
         </label>
 
         <label>

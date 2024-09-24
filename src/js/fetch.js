@@ -5,14 +5,20 @@ export async function fetchEvents(page) {
   const result = await axios.get("/", {
     query: {
       page: page,
-      perPage: 15
+      perPage: 15,
     },
   });
 
   return result.data;
 }
-export  async function fetchParticipants(eventId) {
+export async function fetchParticipants(eventId) {
   const result = await axios.get(`/${eventId}/participants`);
+
+  return result.data;
+}
+export async function postParticipant(eventId, payload) {
+  console.log(typeof payload);
+  const result = await axios.post(`/${eventId}/participants`, { ...payload });
 
   return result.data;
 }

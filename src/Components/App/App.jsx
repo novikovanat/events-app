@@ -3,8 +3,8 @@ import { Suspense, lazy } from "react";
 import "./App.css";
 import NavigationComponent from "../NavigationComponent/NavigationComponent";
 const EventsPage = lazy(() => import("../../Pages/EventsPage/EventsPage"));
-const EventRegistrationComponent = lazy(() =>
-  import("../EventRegistrationComponent/EventRegistrationComponent")
+const EventRegistrationPage = lazy(() =>
+  import("../../Pages/EventRegistrationPage/EventRegistrationPage")
 );
 const ParticipantsPage = lazy(() =>
   import("../../Pages/ParticipantsPage/ParticipantsPage")
@@ -28,7 +28,7 @@ function App() {
             />
             <Route
               path="/:eventId/reistration"
-              element={<EventRegistrationComponent />}
+              element={<EventRegistrationPage />}
             />
 
             <Route path="*" element={<NotFoundPage />} />

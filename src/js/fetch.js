@@ -17,7 +17,6 @@ export async function fetchParticipants(eventId) {
   return result.data;
 }
 export async function postParticipant(eventId, payload) {
-  console.log(typeof payload);
   const result = await axios.post(`/${eventId}/participants`, { ...payload });
 
   return result.data;

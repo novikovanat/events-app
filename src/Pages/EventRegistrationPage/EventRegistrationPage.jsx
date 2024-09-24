@@ -19,11 +19,10 @@ export default function EventRegistrationComponent() {
   });
   const handleSubmit = async (participant, actions) => {
     try {
-      console.log(participant);
       const newParticipant = await postParticipant(eventId, participant);
       return newParticipant;
     } catch (error) {
-      console.log(error);
+      console.log(error.ErrorMessage);
       actions.resetForm();
     }
   };

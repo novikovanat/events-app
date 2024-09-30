@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchEvents } from "../../js/fetch";
 import EventsList from "../../Components/EventsList/EventsList";
+import Pagination from "../../Components/Pagination/Pagination";
 export default function EventsPage() {
   const [data, setData] = useState({
     events: [],
@@ -41,6 +42,11 @@ export default function EventsPage() {
       {data.totalItems && !error && <EventsList events={data.events} />}
       {error && !loading && <p>{error}</p>}
       {loading && <p>Loading participants ...</p>}
+      <Pagination
+        currentPage={data.page}
+        totalCount={data.totalPages}
+        setPage={setPage}
+      />
     </>
   );
 }

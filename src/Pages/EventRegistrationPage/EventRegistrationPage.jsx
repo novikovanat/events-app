@@ -13,9 +13,9 @@ export default function EventRegistrationComponent() {
       .max(18, "Too Long!")
       .required("Name is required!"),
     email: Yup.string().email().required("Email is required!"),
-    dateOfBirth: Yup.date("Invalid date format!").required(
-      "Date of birth is required!"
-    ),
+    dateOfBirth: Yup.date("Invalid date format!")
+      .min(7, "Date format must be dd.mm.yyyy")
+      .required("Date of birth is required!"),
     source: Yup.string().required("Choose option"),
   });
   const handleSubmit = async (participant, actions) => {

@@ -1,24 +1,23 @@
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import "./App.css";
-import NavigationComponent from "../NavigationComponent/NavigationComponent";
+// import WarperLayout from "../WarperLayout/WarperLayout";
 const EventsPage = lazy(() => import("../../Pages/EventsPage/EventsPage"));
 const EventRegistrationPage = lazy(() =>
-  import("../../Pages/EventRegistrationPage/EventRegistrationPage")
+  import("../../Pages/EventRegistrationPage/RegestrationForEventPage")
 );
 const ParticipantsPage = lazy(() =>
   import("../../Pages/ParticipantsPage/ParticipantsPage")
 );
 
 import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
+// import HeaderStyled from "../HeaderStyled/HeaderStyled";
+import { GlobalStyles, Layout } from "../../GlobalStyles";
 
 function App() {
   return (
     <>
-      <header>
-        <NavigationComponent />
-      </header>
       <main>
+        <GlobalStyles />
         <Suspense fallback="Page loading...">
           <Routes>
             <Route path="/" element={<EventsPage />} />
@@ -30,7 +29,6 @@ function App() {
               path="/:eventId/reistration"
               element={<EventRegistrationPage />}
             />
-
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

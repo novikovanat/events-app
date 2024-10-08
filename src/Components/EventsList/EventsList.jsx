@@ -7,5 +7,5 @@ export default function EventsList({ events }) {
     </li>
   ));
 
-  return <>{eventsList}</>;
+  return <ul>{eventsList}</ul>;
 }

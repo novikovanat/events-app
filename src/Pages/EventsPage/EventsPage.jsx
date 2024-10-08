@@ -2,6 +2,11 @@ import { useEffect, useState } from "react";
 import { fetchEvents } from "../../js/fetch";
 import EventsList from "../../Components/EventsList/EventsList";
 import Pagination from "../../Components/Pagination/Pagination";
+import {
+  Header,
+ 
+} from "../../Components/HeaderStyled/HeaderStyled";
+import { GlobalStyles, Layout } from "../../GlobalStyles";
 export default function EventsPage() {
   const [data, setData] = useState({
     events: [],
@@ -39,9 +44,13 @@ export default function EventsPage() {
 
   return (
     <>
+      {/* <GlobalStyles/> */}
+      
+      <Header>Events</Header>
       {data.totalItems && !error && <EventsList events={data.events} />}
       {error && !loading && <p>{error}</p>}
       {loading && <p>Loading participants ...</p>}
+      <Layout />
       <Pagination
         currentPage={data.page}
         totalCount={data.totalPages}

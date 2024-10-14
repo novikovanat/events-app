@@ -6,11 +6,24 @@ export default function EventsList({ events }) {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 26px;
+    }
+  `;
+  const ListLi = styled.li`
+    @media (min-width: 768px) {
+      width: calc((100% - 48px) / 2);
+    }
+    @media (min-width: 1280px) {
+      width: calc((100% - 48px) / 3);
+    }
   `;
   const eventsList = events.map(({ _id: id, title, description }) => (
-    <li key={id}>
+    <ListLi key={id}>
       <EventCard title={title} description={description} id={id} />
-    </li>
+    </ListLi>
   ));
 
   return <ListStyle>{eventsList}</ListStyle>;

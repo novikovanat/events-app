@@ -10,9 +10,7 @@ export const GlobalStyles = createGlobalStyle`
   color: #00712d;
   background-color: #d5ed9f;
   padding: 0;
-  margin: 0 auto;
-
-
+  margin: 0;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,13 +19,17 @@ export const GlobalStyles = createGlobalStyle`
 `;
 
 export const Layout = styled.div`
+/* margin: auto; */
   padding: 0 20px;
+  /* width: 375px; */
 
   @media (min-width: 768px) {
     padding: 0 100px;
+    /* width: 768px; */
   }
   @media (min-width: 1280px) {
-    padding: 0 100px;
+    /* padding: 0 100px; */
+    /* width: 1280px; */
 
   }
 `;

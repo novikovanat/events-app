@@ -9,7 +9,7 @@ export const Header = styled.header`
   text-align: left;
   color: #33372c;
   letter-spacing: 2px;
-  padding: 21px 0 0 51px;
+  padding: 22px 0 0 51px;
   font-weight: 500;
   @media (min-width: 375px) {
     padding: 26px 0 0 59px;
@@ -20,9 +20,9 @@ export const Header = styled.header`
     width: 768px;
     font-size: 41px;
   }
-  @media (min-width: 768px) {
+  @media (min-width: 1280px) {
     padding: 46px 0 0 118px;
-    width: 768px;
+    width: 1280px;
     font-size: 41px;
   }
   

@@ -11,7 +11,7 @@ const ParticipantsPage = lazy(() =>
 
 import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
 // import HeaderStyled from "../HeaderStyled/HeaderStyled";
-import { GlobalStyles, Layout } from "../../GlobalStyles";
+import { GlobalStyles } from "../../GlobalStyles";
 
 function App() {
   return (

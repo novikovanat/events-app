@@ -1,14 +1,16 @@
+import { FcNext } from "react-icons/fc";
+import { FcPrevious } from "react-icons/fc";
 
 const Pagination = (props) => {
   const { setPage, totalCount, siblingCount = 1, currentPage } = props;
 
   const range = (start, end) => {
     let length = end - start + 1;
-  
+
     return Array.from({ length }, (_, idx) => idx + start);
   };
   const paginationRange = range(1, totalCount);
-  
+
   if (currentPage === 0 || paginationRange.length < 2) {
     return null;
   }
@@ -31,9 +33,17 @@ const Pagination = (props) => {
   return (
     <div>
       <p>page: {currentPage}</p>
-      {1 < currentPage && <button onClick={onPrevious}>Previous</button>}
+      {1 < currentPage && (
+        <button onClick={onPrevious}>
+          <FcPrevious />
+        </button>
+      )}
       <ul>{pageList}</ul>
-      {totalCount > currentPage && <button onClick={onNext}>Next</button>}
+      {totalCount > currentPage && (
+        <button onClick={onNext}>
+          <FcNext />
+        </button>
+      )}
     </div>
   );
 };

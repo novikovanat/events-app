@@ -1,8 +1,13 @@
-# React + Vite
+# Events
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Events board page: implement the events board page where users can observe the
+ paginated list of available events.  Event  consists:- title;- description;- event date;- organizer;
 
-Currently, two official plugins are available:
+Event registration page: by clicking on “Register”, users should be redirected to the
+ event registration page, which contains a registration form with the following fields: full
+ name, email, date of birth, “where did you hear about this event?”.
+ Once the form is submitted, the response should be stored in a database.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Event participants page: implement the event participants page where users can see
+ a list of registered participants. This page should be available by clicking on the “View”
+ button

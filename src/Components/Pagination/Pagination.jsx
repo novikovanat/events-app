@@ -1,5 +1,6 @@
 import { FcNext } from "react-icons/fc";
 import { FcPrevious } from "react-icons/fc";
+import styled from "styled-components";
 
 const Pagination = (props) => {
   const { setPage, totalCount, siblingCount = 1, currentPage } = props;
@@ -30,21 +31,29 @@ const Pagination = (props) => {
     );
   });
 
+  const PaginationFlex = styled.ul`
+    display: flex;
+  `;
+  const DivFlex = styled.div`
+    display: flex;
+  `;
+  
+
   return (
-    <div>
+    <DivFlex>
       <p>page: {currentPage}</p>
       {1 < currentPage && (
         <button onClick={onPrevious}>
           <FcPrevious />
         </button>
       )}
-      <ul>{pageList}</ul>
+      <PaginationFlex>{pageList}</PaginationFlex>
       {totalCount > currentPage && (
         <button onClick={onNext}>
           <FcNext />
         </button>
       )}
-    </div>
+    </DivFlex>
   );
 };
 

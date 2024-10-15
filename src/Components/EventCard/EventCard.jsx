@@ -12,9 +12,6 @@ export default function EventCard({ title, description, id }) {
     justify-content: space-evenly;
     width: 300px;
     height: 200px;
-    /* :hover & {
-      border-color: transparent;
-    } */
   `;
   return (
     <CardFrame>
@@ -22,7 +19,7 @@ export default function EventCard({ title, description, id }) {
       <p>{description}</p>
       <nav>
         <EventLink path={`/${id}/participants`} title="View" />
-        <EventLink path={`/${id}/reistration`} title="Register" />
+        <EventLink path={`/${id}/registration`} title="Register" />
       </nav>
     </CardFrame>
   );

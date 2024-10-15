@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3100/events/";
+axios.defaults.baseURL = "https://events-app-backend-1ldk.onrender.com/events";
 export async function fetchEvents(page) {
   const result = await axios.get(`/?page=${page}`);
   return result.data;

@@ -26,7 +26,7 @@ function App() {
               element={<ParticipantsPage />}
             />
             <Route
-              path="/:eventId/reistration"
+              path="/:eventId/registration"
               element={<EventRegistrationPage />}
             />
             <Route path="*" element={<NotFoundPage />} />

@@ -17,7 +17,7 @@ export default function EventsList({ events }) {
       width: calc((100% - 48px) / 2);
     }
     @media (min-width: 1280px) {
-      width: calc((100% - 48px) / 3);
+      width: calc((100% - 24px) / 3);
     }
   `;
   const eventsList = events.map(({ _id: id, title, description }) => (

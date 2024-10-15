@@ -9,7 +9,9 @@ const ParticipantsPage = lazy(() =>
   import("../../Pages/ParticipantsPage/ParticipantsPage")
 );
 
-import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
+const NotFoundPage = lazy(() =>
+  import("../../Pages/NotFoundPage/NotFoundPage")
+);
 // import HeaderStyled from "../HeaderStyled/HeaderStyled";
 import { GlobalStyles } from "../../GlobalStyles";
 

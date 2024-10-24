@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import EventLink from "../EventLink/EventLink";
+import { NavLink } from "react-router-dom";
 
 export default function EventCard({ title, description, id }) {
   const CardFrame = styled.div`
@@ -18,8 +18,8 @@ export default function EventCard({ title, description, id }) {
       <h2>{title}</h2>
       <p>{description}</p>
       <nav>
-        <EventLink path={`/${id}/participants`} title="View" />
-        <EventLink path={`/${id}/registration`} title="Register" />
+        <NavLink to={`/${id}/participants`}>View</NavLink>
+        <NavLink to={`/${id}/registration`}>Register</NavLink>
       </nav>
     </CardFrame>
   );

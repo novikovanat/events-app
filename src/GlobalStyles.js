@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
-  * {font-family: IBM Plex Serif ,serif;
+  * {font-family: Rubik Dirt, Niconne , serif;
     box-sizing: border-box;
   line-height: 1.5;
   font-weight: 400;

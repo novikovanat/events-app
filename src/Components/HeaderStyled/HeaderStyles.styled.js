@@ -9,21 +9,21 @@ export const Header = styled.header`
   aspect-ratio: 4/2;
   text-align: left;
   color: #33372c;
-  letter-spacing: 2px;
-  padding: 22px 0 0 51px;
+  letter-spacing: 1px;
+  padding: 22px 0 0 44px;
   font-weight: 500;
   @media (min-width: 375px) {
     padding: 26px 0 0 59px;
     width: 375px;
   }
   @media (min-width: 768px) {
-    padding: 46px 0 0 118px;
+    padding: 46px 0 0 105px;
     width: 768px;
     font-size: 41px;
   }
   @media (min-width: 1280px) {
-    padding: 96px 0 0 230px;
+    padding: 84px 0 0 175px;
     width: 1280px;
-    font-size: 41px;
+    font-size: 69px;
   }
 `;

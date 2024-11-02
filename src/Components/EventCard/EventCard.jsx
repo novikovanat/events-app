@@ -1,17 +1,20 @@
-import { NavLink } from "react-router-dom";
-import { CardFrame, StyledLink, StyledTitle} from "./EventCard.styled";
+import {
+  CardFrame,
+  StyledNav,
+  StyledLink,
+  StyledTitle,
+  Paragraph,
+} from "./EventCard.styled.jsx";
 
 export default function EventCard({ title, description, id }) {
-  
   return (
     <CardFrame>
       <StyledTitle>{title}</StyledTitle>
-      <p>{description}</p>
-      <nav>
+      <Paragraph>{description}</Paragraph>
+      <StyledNav>
         <StyledLink to={`/${id}/participants`}>View</StyledLink>
         <StyledLink to={`/${id}/registration`}>Register</StyledLink>
-      </nav>
+      </StyledNav>
     </CardFrame>
   );
 }
-

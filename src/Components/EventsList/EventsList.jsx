@@ -3,10 +3,11 @@ import styled from "styled-components";
 
 export default function EventsList({ events }) {
   const ListStyle = styled.ul`
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 8px; */
     @media (min-width: 768px) {
+      display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 26px;

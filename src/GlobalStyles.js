@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   * {font-family: Rubik Dirt, Niconne , serif;
     box-sizing: border-box;
   line-height: 1.5;
+  letter-spacing: 2px;
   font-weight: 400;
   text-decoration:none;
   list-style: none;
@@ -20,11 +21,10 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Layout = styled.div`
   margin: 0 auto;
-  padding: 0 6px;
+  padding: 0 16px;
   width: 320px;
 
   @media (min-width: 375px) {
-    width: 375px;
   }
   @media (min-width: 768px) {
     width: 768px;

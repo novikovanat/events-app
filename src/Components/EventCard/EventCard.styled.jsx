@@ -1,19 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const CardFrame = styled.div`
-  /* move to List
-  /* border: solid #ff9100; */
-  /* border-radius: 25%; */
-  /* padding: 16px 20px; */
-  /* text-align: center; */
-  /* display: flex; */
-  flex-direction: column;
-  justify-content: space-evenly;
-  /* width: 300px;
-  height: 200px; */
-  margin-bottom: 46px;
-`;
 export const StyledTitle = styled.h2`
   font-size: 24px;
   text-align: center;
@@ -24,6 +11,8 @@ export const StyledTitle = styled.h2`
 `;
 export const Paragraph = styled.p`
   font-family: EB Garamond, serif;
+  min-height: 72px;
+  flex-grow: 1;
   &::first-letter {
     text-transform: uppercase;
   }
@@ -36,6 +25,7 @@ export const StyledNav = styled.nav`
   margin: 16px 24px 0 8px;
 `;
 export const StyledLink = styled(NavLink)`
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
   display: inline-block;
   color: #ff9100;
   width: 108.5px;
@@ -45,7 +35,6 @@ export const StyledLink = styled(NavLink)`
   /* background-color: #00712d; */
   &:active {
     background-color: #00712d;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
     box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
       rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
       rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,

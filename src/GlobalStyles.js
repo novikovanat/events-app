@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const Layout = styled.div`
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 21px;
   width: 320px;
 
   @media (min-width: 375px) {

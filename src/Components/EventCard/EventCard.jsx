@@ -3,7 +3,7 @@ import {
   StyledLink,
   StyledTitle,
   Paragraph,
-} from "./EventCard.styled.jsx";
+} from "./EventCard.styled.js";
 
 export default function EventCard({ title, description, id }) {
   return (

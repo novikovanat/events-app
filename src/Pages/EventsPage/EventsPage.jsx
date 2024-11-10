@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchEvents } from "../../js/fetch";
 import EventsList from "../../Components/EventsList/EventsList";
 import Pagination from "../../Components/Pagination/Pagination";
-import {Layout} from "../../GlobalStyles";
+import { Layout } from "../../GlobalStyles";
 import { Header } from "../../Components/HeaderStyled/HeaderStyles.styled";
 export default function EventsPage() {
   const [data, setData] = useState({
@@ -55,4 +55,3 @@ export default function EventsPage() {
     </>
   );
 }
-

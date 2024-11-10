@@ -5,6 +5,7 @@ import {
   PaginationFlex,
   Enumeration,
   ArrowButton,
+  PlaceholderDiv
 } from "./Pagination.styled";
 
 const Pagination = (props) => {
@@ -42,17 +43,21 @@ const Pagination = (props) => {
 
   return (
     <DivFlex>
-      {1 < currentPage && (
-        <ArrowButton as="button" onClick={onPrevious}>
-          <FcPrevious />
-        </ArrowButton>
-      )}
-      <PaginationFlex>{pageList}</PaginationFlex>
-      {totalCount > currentPage && (
-        <ArrowButton onClick={onNext}>
-          <FcNext />
-        </ArrowButton>
-      )}
+      <PlaceholderDiv>
+        {1 < currentPage && (
+          <ArrowButton as="button" onClick={onPrevious}>
+            <FcPrevious />
+          </ArrowButton>
+        )}
+      </PlaceholderDiv>
+      <PaginationFlex as="ul">{pageList}</PaginationFlex>
+      <PlaceholderDiv>
+        {totalCount > currentPage && (
+          <ArrowButton as="button" onClick={onNext}>
+            <FcNext />
+          </ArrowButton>
+        )}
+      </PlaceholderDiv>
     </DivFlex>
   );
 };

@@ -1,29 +1,27 @@
 import styled from "styled-components";
 
-export const PaginationFlex = styled.ul`
+export const PaginationFlex = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0 auto;
-  width: 320px;
+  width: 120px;
 `;
-export const DivFlex = styled.div`
-  display: flex;
-  justify-content: center;
+export const DivFlex = styled(PaginationFlex)`
+  margin: 0 auto 20px;
+  width: 278px;
 `;
-
-export const Enumeration = styled.li.attrs((props) => ({
-  $isCurrent: props.$isCurrent,
-}))`
-  background-color: ${(props) =>
-    props.$isCurrent ? `#ff9100` : `transparent`};
-  border: 1px solid ${(props) => (props.$isCurrent ? `#00712d` : `transparent`)};
-
+export const ButtonLike = styled.div`
+  cursor: pointer;
   padding: 6px 12px;
   border-radius: 35% 50%;
-  cursor: pointer;
+`;
+export const PlaceholderDiv = styled.div`
+  width: 48px;
 `;
 
-export const ArrowButton = styled(Enumeration)`
+export const ArrowButton = styled(ButtonLike)`
+  padding-top: 8px;
+  outline: solid 3px #ff9100;
+  border-style: none;
   & svg {
     width: 20px;
     height: 20px;
@@ -31,4 +29,15 @@ export const ArrowButton = styled(Enumeration)`
   & svg polygon {
     fill: #00712d;
   }
+  &:focus {
+    outline: 1px solid transparent;
+  }
+`;
+
+export const Enumeration = styled(ButtonLike).attrs((props) => ({
+  $isCurrent: props.$isCurrent,
+}))`
+  background-color: ${(props) =>
+    props.$isCurrent ? `#ff9100` : `transparent`};
+  border: 1px solid ${(props) => (props.$isCurrent ? `#00712d` : `transparent`)};
 `;

@@ -1,7 +1,12 @@
+import NavigationComponent from "../../Components/NavigationComponent/NavigationComponent";
+import { NotFoundBar } from "./NotFoundPage.styled";
+
 export default function NotFoundPage() {
   return (
     <>
-      <h2>This page not found</h2>
+      <NavigationComponent />
+      <NotFoundBar>Ooops... This page not found</NotFoundBar>
     </>
   );
 }
+ 

@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
-import { HiHomeModern } from "react-icons/hi2";
-
+import { NavStyled, Home, StyledLink } from "./NavigationComponent.styled";
 
 export default function NavigationComponent() {
-  
   return (
-    <nav>
-      <Link to="/">
-      <HiHomeModern />
-      <span>Home</span></Link>
-    </nav>
+    <NavStyled>
+      <StyledLink to="/">
+        <Home/>
+        <span>Home</span>
+      </StyledLink>
+    </NavStyled>
   );
 }

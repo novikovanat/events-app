@@ -1,9 +1,13 @@
+import { ParagraphStyled, StyledParticipant, StyledParticipantList } from "./ParticipantsList.styled";
+
 export default function ParticipantsList({ participants }) {
   const participantsList = participants.map(({ _id: id, fullName, email }) => (
-    <li key={id}>
-      <p>{fullName}</p>
-      <p>{email}</p>
-    </li>
+    <StyledParticipant key={id}>
+      <ParagraphStyled>{fullName}</ParagraphStyled>
+      <ParagraphStyled>{email}</ParagraphStyled>
+    </StyledParticipant>
   ));
-  return <ul>{participantsList}</ul>;
+  return <StyledParticipantList>{participantsList}</StyledParticipantList>;
 }
+
+

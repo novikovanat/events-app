@@ -33,3 +33,4 @@ export const Layout = styled.div`
     width: 1280px;
   }
 `;
+

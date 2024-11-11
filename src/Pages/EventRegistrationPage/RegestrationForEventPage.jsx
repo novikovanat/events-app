@@ -1,8 +1,19 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Field } from "formik";
 import * as Yup from "yup";
 import { postParticipant } from "../../js/fetch";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import { Layout } from "../../GlobalStyles";
+import NavigationComponent from "../../Components/NavigationComponent/NavigationComponent.jsx";
+import {
+  StyledForm,
+  ErrorMessageStyled,
+  UlPadding,
+  BlockElement,
+  RadioInputs,
+  LiFlex,
+  RegisterButton
+} from "./RegestrationForEventPage.styled.js";
 export default function EventRegistrationComponent() {
   const { eventId } = useParams();
   const [loading, setLoading] = useState(false);
@@ -16,7 +27,7 @@ export default function EventRegistrationComponent() {
     dateOfBirth: Yup.date("Invalid date format!")
       .min(7, "Date format must be dd.mm.yyyy")
       .required("Date of birth is required!"),
-    source: Yup.string().required("Choose option"),
+    source: Yup.string().required("Please select one of the options above"),
   });
   const handleSubmit = async (participant, actions) => {
     try {
@@ -32,7 +43,8 @@ export default function EventRegistrationComponent() {
   };
 
   return (
-    <div>
+    <Layout>
+      <NavigationComponent />
       <Formik
         initialValues={{
           fullName: "",
@@ -43,42 +55,46 @@ export default function EventRegistrationComponent() {
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        <Form>
+        <StyledForm>
           <label>
             Full name
-            <Field name="fullName" />
-            <ErrorMessage name="fullName" component="span" />
+            <BlockElement name="fullName" />
+            <ErrorMessageStyled name="fullName" component="span" />
           </label>
           <label>
             Email
-            <Field name="email" />
-            <ErrorMessage name="email" component="span" />
+            <BlockElement name="email" />
+            <ErrorMessageStyled name="email" component="span" />
           </label>
           <label>
             Date of birth
-            <Field name="dateOfBirth" />
-            <ErrorMessage name="dateOfBirth" component="span" />
+            <BlockElement name="dateOfBirth" />
+            <ErrorMessageStyled name="dateOfBirth" component="span" />
           </label>
           <label>
-            Where did you here about this event?
-            <label>
-              Social media
-              <Field type="radio" name="source" value="social media" />
-            </label>
-            <label>
-              Friends
-              <Field type="radio" name="source" value="friends" />
-            </label>
-            <label>
-              Found myself
-              <Field type="radio" name="source" value="found myself" />
-            </label>
-            <ErrorMessage name="source" component="span" />
+            Where did you hear about this event?
+            <UlPadding>
+              <LiFlex>
+                <label htmlFor="social media">Social media</label>
+                <RadioInputs type="radio" name="source" value="social media" />
+              </LiFlex>
+              <LiFlex>
+                <label htmlFor="friends">Friends</label>
+                <RadioInputs type="radio" name="source" value="friends" />
+              </LiFlex>
+              <LiFlex>
+                <label htmlFor="found myself">Found myself</label>
+                <RadioInputs type="radio" name="source" value="found myself" />
+              </LiFlex>
+              <ErrorMessageStyled name="source" component="span" />
+            </UlPadding>
           </label>
-          <button type="submit">Register</button>
-        </Form>
+          <RegisterButton as="button" type="submit">
+            Register
+          </RegisterButton>
+        </StyledForm>
       </Formik>
       {loading && <p>Looking for available seats..</p>}
-    </div>
+    </Layout>
   );
 }

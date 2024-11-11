@@ -31,6 +31,7 @@ export const StyledNav = styled.nav`
   margin: 12px 24px 0 8px;
 `;
 export const StyledLink = styled(NavLink)`
+  cursor: pointer;
   text-shadow: 0 1px 0 rgba(31, 61, 2, 1);
   display: inline-block;
   color: #ff9100;

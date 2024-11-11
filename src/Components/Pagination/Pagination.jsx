@@ -5,7 +5,7 @@ import {
   PaginationFlex,
   Enumeration,
   ArrowButton,
-  PlaceholderDiv
+  PlaceholderDiv,
 } from "./Pagination.styled";
 
 const Pagination = (props) => {

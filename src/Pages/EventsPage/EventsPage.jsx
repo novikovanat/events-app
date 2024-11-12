@@ -45,7 +45,7 @@ export default function EventsPage() {
       <Layout>
         {data.totalItems && !error && <EventsList events={data.events} />}
         {error && !loading && <p>{error}</p>}
-        {loading && <p>Loading participants ...</p>}
+        {loading && <p>Loading events ...</p>}
         <Pagination
           currentPage={data.page}
           totalCount={data.totalPages}
